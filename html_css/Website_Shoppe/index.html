@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./asset/css/normalize.css">
     <link rel="stylesheet" href="./asset/css/base.css">
     <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/grid.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
     <link rel="stylesheet" href="./asset/fonts/fontawesome-free-6.1.1-web/css/all.min.css">
 
 
@@ -32,8 +34,8 @@
 
     <div class="main" id="main-id">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list ">
                         <li class="header__navbar-item header__navbar-item--separate">Kênh Người Bán</li>
                         <li class="header__navbar-item header__navbar-item--separate successful-login-interface">Trở
@@ -193,6 +195,11 @@
 
                 <!-- Header logo/ tìm kiếm... -->
                 <div class="header__with-search">
+
+                    <label for="mobile-search-checkbox" class="header__mobile-search hide-on-mobile-pc-tablet">
+                        <i class="header__mobile-search--icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
                     <div class="header__with-logo">
                         <a href="" class="header__with-logo--link--home">
                             <svg viewBox="0 0 192 65" class="header__with-logo-img">
@@ -205,7 +212,10 @@
                         </a>
                     </div>
 
-                    <div class="header__search">
+                    <!-- tạo hiệu ứng ẩn hiện thanh tìm kiếm mobile -->
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-input">
+
+                    <div class="header__search hide-on-mobile ">
                         <div class="header__search-input--wrap">
                             <input class="header__search-input" type="text" name="" id=""
                                 placeholder="Nhập để tìm kiếm sản phẩm ">
@@ -370,13 +380,29 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Header sort bar -->
+            <ul class="header__sort-bar">
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link header__sort-link-active ">Liên quan</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán Chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <!-- Container` -->
         <div class="container">
-            <div class="grid">
-                <div class="grid__row app__content ">
-                    <div class="grid__colum-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content ">
+                    <div class="col l-2 m-0 c-0">
 
                         <!-- Category  -->
                         <nav class="munu">
@@ -546,12 +572,12 @@
                                         isSetOtherClick = !isSetOtherClick;
                                         setOtherClick();
                                     }
-                                    function setOtherClick(){
-                                        if(isSetOtherClick){
-                                        document.getElementById("add_city-id").style.display = "block";
-                                    } else {
-                                        document.getElementById("add_city-id").style.display = "none";
-                                    }
+                                    function setOtherClick() {
+                                        if (isSetOtherClick) {
+                                            document.getElementById("add_city-id").style.display = "block";
+                                        } else {
+                                            document.getElementById("add_city-id").style.display = "none";
+                                        }
                                     }
                                 </script>
 
@@ -1222,7 +1248,7 @@
                                         </div>
                                         <button class="header__input-btn btn">Xác Nhận</button>
                                     </div>
-                                    
+
 
                                 </div>
 
@@ -1231,9 +1257,9 @@
 
                     </div>
 
-                    <div class="grid__colum-10">
+                    <div class="col l-10 m-12 c-12">
                         <!-- Home sort/filter -->
-                        <div class="home__filter">
+                        <div class="home__filter hide-on-mobile-tablet">
                             <span class="home__filter-label">Sắp xếp theo</span>
                             <button class="btn home__filter-btn">Phổ Biến</button>
                             <button class="btn home__filter-btn btn--primary">Mới Nhất</button>
@@ -1269,11 +1295,65 @@
                             </div>
                         </div>
 
+                        <!-- list sản phẩm mobile -->
+                        <nav class="mobile__category">
+                            <ul class="mobile__category-list">
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Kẹp Tóc</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Son ACE</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Kem Dưỡng Hỗ Trợ Hết Mụn Some By Mi AHA-BHA-PHA 30 Days Miracle Cream 50ml</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Dưỡng Da</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <!-- Product  -->
                         <div class="home__product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- Product item -->
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
@@ -1355,13 +1435,14 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
 
                                     <!-- Product item -->
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 10.jpeg );"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 10.jpeg );">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -1439,7 +1520,7 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
 
                                     <!-- Product item -->
                                     <div class="home__product-item">
@@ -1523,13 +1604,14 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
 
                                     <!-- Product item -->
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 11.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 11.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -1607,7 +1689,7 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
 
                                     <!-- Product item -->
                                     <div class="home__product-item">
@@ -1690,7 +1772,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
 
                                     <!-- Product item -->
                                     <div class="home__product-item">
@@ -1774,11 +1856,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 12.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 12.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -1856,11 +1939,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 13.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 13.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -1938,11 +2022,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 14.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 14.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2020,11 +2105,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 15.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 15.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2102,11 +2188,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 18.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 18.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2184,11 +2271,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 19.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 19.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2266,11 +2354,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 21.jpeg );"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 21.jpeg );">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2348,11 +2437,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 22.jpeg );"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 22.jpeg );">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2430,11 +2520,12 @@
                                     </div>
 
                                 </div>
-                                <div class="grid__colum-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home__product-item">
                                         <a href="" class="home__product-item--link">
                                             <div class="home__product-item--img"
-                                                style="background-image: url(./asset/img/product/asset\ 23.jpeg);"></div>
+                                                style="background-image: url(./asset/img/product/asset\ 23.jpeg);">
+                                            </div>
                                             <!-- <img class="home__product-item--img" src="./asset/img/product/asset_0.jpeg" alt=""> -->
                                             <h4 class="home__product-item--name">[HB Gift] - Băng đô rửa mặt tai thỏ
                                                 Unicharm </h4>
@@ -2559,9 +2650,9 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__colum-2-4">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3>CHĂM SÓC KHÁCH HÀNG</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -2594,7 +2685,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colum-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3>VỀ SHOPEE</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -2627,7 +2718,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colum-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3>THANH TOÁN</h3>
                         <div class="footer__list-pay">
                             <ul class="footer__list footer__list-img">
@@ -2699,7 +2790,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="grid__colum-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3>THEO DÕI CHÚNG TÔI TRÊN</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -2716,7 +2807,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colum-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3>TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
                         <div class="footer__get--the--app">
                             <div class="footer__qr-app">

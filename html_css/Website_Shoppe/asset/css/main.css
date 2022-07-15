@@ -7,9 +7,14 @@
 /* ================================================ */
 
 /* Header */
+.main {
+    overflow: hidden;
+}
+
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d);
+
 }
 
 .header__navbar {
@@ -219,8 +224,6 @@
     object-fit: contain;
 
 }
-
-.header__bell-info {}
 
 .header__bell-name {
     display: block;
@@ -503,10 +506,6 @@
     cursor: pointer;
 }
 
-.authen-form__input-text {}
-
-.authen-form__group {}
-
 .authen-form__input {
     width: 94%;
     height: 30px;
@@ -609,13 +608,32 @@
     align-items: center;
 }
 
+.header__mobile-search {
+    padding: 0 22px;
+}
+
+/* tạo hiệu ứng ẩn hiện thanh tìm kiếm mobile */
+.header__search-input:checked~.header__search {
+    display: flex;
+}
+
+.header__mobile-search--icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
 .header__with-logo--link--home {
     color: transparent;
     text-decoration: none;
+    display: block;
+    line-height: 0;
 }
 
 .header__with-logo {
     width: 200px;
+
+    /* bỏ hiệu ứng khi nhấn vào */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__with-logo-img {
@@ -656,11 +674,12 @@
 }
 
 .header__cart {
-    margin: 0 70px;
+    width: 100px;
     padding: 12px 12px;
     text-align: center;
     position: relative;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -709,7 +728,7 @@
 .header__cart-list::after {
     content: "";
     position: absolute;
-    top: -3%;
+    top: -2%;
     right: 22px;
     width: 0;
     height: 0;
@@ -757,7 +776,7 @@
 
 .header__cart-list--item {
     width: 100%;
-    height: 50vh;
+    max-height: 50vh;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1011,10 +1030,70 @@
     display: block;
 }
 
+/* Header sort bar */
+.header__sort-bar {
+    /* display: flex; */
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header__sort-bar);
+    background-color: var(--white-color);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #d1cccc;
+    border-bottom: 1px solid #d1cccc;
+    display: none;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header__sort-bar);
+    text-align: center;
+    position: relative;
+}
+
+.header__sort-link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #d1cccc;
+    transform: translateY(-50%);
+}
+
+.header__sort-link-active::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100px;
+    border: 1px solid var(--primary--color--orange);
+    transform: translateX(50%);
+}
+
+.header__sort-item--active .header__sort-link {
+    color: var(--primary--color--orange);
+}
+
+.header__sort-item:first-child .header__sort-link::after {
+    display: none;
+}
+
 /* Container */
 .container {
     background-color: #f5f5f5;
-
+    overflow: hidden;
 }
 
 .app__content {
@@ -1212,6 +1291,67 @@
 
 /* ============================================== */
 /* Product */
+
+
+/* list sản phẩm mobile */
+.mobile__category {}
+
+.mobile__category-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile__category-list::-webkit-scrollbar{
+    display: none;
+}
+
+.mobile__category-item {
+    flex-shrink: 0;
+    margin-right: 8px;
+    
+    /* display: block;
+    align-items: center; */
+}
+
+.mobile__category-item:nth-last-of-type(3n + 1) .mobile__category-link {
+    background-color: #87AFD8;
+}
+
+.mobile__category-item:nth-last-of-type(3n + 2) .mobile__category-link {
+    background-color: #76C9BD;
+}
+
+.mobile__category-item:nth-last-of-type(3n + 3) .mobile__category-link {
+    background-color: #88CF81;
+}
+
+.mobile__category-link {
+    --line-height:2rem;
+
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white-color);
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    width: 110px;
+    border-radius: 4px;
+    padding: 0 6px;
+    display: block;
+    text-align:  center;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+
+}
+
 
 /* Product item */
 
@@ -1461,6 +1601,7 @@
 /* Pagination */
 .home__product-pagination {
     margin: 50px 0 32px 0;
+    padding-left: 0;
 }
 
 /* Footer */
@@ -1497,6 +1638,7 @@
 .footer__list-item {
     margin-top: 14px;
 }
+
 
 .footer__list-item--link {
     text-decoration: none;
@@ -1556,9 +1698,10 @@
     transform-origin: left top;
     animation: growUpSlowly ease-in 0.25s;
     will-change: opacity, transform;
-    
+
 }
-.add_city-nav{
+
+.add_city-nav {
     overflow-y: auto;
     width: 900px;
     height: 460px;
@@ -1566,8 +1709,8 @@
 }
 
 /* Ẩn thanh cuộn */
-.add_city-nav::-webkit-scrollbar { 
-    display: none; 
+.add_city-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .add_city-header {
@@ -1618,7 +1761,7 @@
     display: flex;
 }
 
-.nav-left__heading{
+.nav-left__heading {
     display: block;
     font-size: 1.6rem;
     color: #7C7C7C;
@@ -1638,7 +1781,7 @@
     color: #7C7C7C;
 }
 
-.nav--left__item{
+.nav--left__item {
     display: flex;
     width: 180px;
     height: 30px;
@@ -1654,7 +1797,7 @@
 
 }
 
-.add_city-nav--right{
+.add_city-nav--right {
     display: flex;
     flex-direction: column;
     width: 30px;
@@ -1663,30 +1806,30 @@
     top: 22%;
 }
 
-.nav--right__item{
+.nav--right__item {
     width: 30px;
     height: 30px;
 }
 
-.nav--right__link{
+.nav--right__link {
     font-size: 1.4rem;
     color: #7C7C7C;
     text-decoration: none;
 }
 
-.footer__add--city{
+.footer__add--city {
     display: flex;
     margin-left: auto;
     align-items: center;
     margin-right: 20px;
 }
 
-.reset{
+.reset {
     padding: 24px;
     font-size: 1.6rem;
 }
 
-.reset a{
+.reset a {
     text-decoration: none;
     color: var(--text-color);
 }
@@ -1698,5 +1841,5 @@
     align-items: center;
     justify-content: center;
     padding-top: 3px;
-    
+
 }
