@@ -165,9 +165,9 @@
     height: 0;
     margin: -10px 0 0 361px;
     /* background-color: transparent transparent white transparent ; */
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid white;
+    border-left: 204px solid transparent;
+    border-right: 204px solid transparent;
+    border-bottom: 410px solid white;
 }
 
 /* Tạo khối */
