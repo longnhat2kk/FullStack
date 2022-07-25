@@ -288,7 +288,10 @@
 }
 
 .about__area-content--heading{
-    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about__area-content h2 {
@@ -625,4 +628,12 @@
 
 .social__network .social__network-icon{
     font-size: 2rem;
+}
+
+.social__network-list{
+    display: flex;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

@@ -177,6 +177,7 @@
 
     .social__bar-list {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: normal;
         margin: 0 42px;
