@@ -346,6 +346,7 @@
     height: 470px;
     background-color: var(--white-color);
     position: absolute;
+    top: 20%;
 }
 
 .special__recipes-content--in {
