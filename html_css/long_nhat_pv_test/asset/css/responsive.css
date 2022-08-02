@@ -18,6 +18,10 @@
 /* Mobile - Tablet */
 @media (max-width: 1023px) {
 
+    .social__bar {
+        height: 40px;
+    }
+
     .hide-on-mobile-tablet {
         display: block;
     }
@@ -97,10 +101,19 @@
         height: 67vh;
     }
 
+    .about__us{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .about__area-content h2 {
         font-size: 3rem;
     }
 
+    .about__area-img--right{
+        top: calc(100% + 50px);
+    }
 
     .layout__food {
         margin-bottom: 12px;
@@ -116,6 +129,11 @@
         justify-content: space-between;
         align-items: center;
         height: 900px;
+    }
+
+    .footer__content-center{
+        display: flex;
+        justify-content: center;
     }
 
     .footer__content {
@@ -167,7 +185,7 @@
     }
 
     .logo__unit {
-        margin: 34px 254px;
+        margin: 40px 254px;
     }
 
     .address,
@@ -204,6 +222,7 @@
 
     .about__area {
         margin-top: 110vh;
+        margin-bottom: 0;
     }
 
     .about__us {
@@ -239,7 +258,7 @@
     .special__recipes-img {
         display: flex;
         height: 278px;
-        bottom: 60px;
+        bottom: 30px;
         right: 20px;
         position: absolute;
     }
@@ -249,7 +268,7 @@
         text-align: center;
         width: 333px;
         left: 20px;
-        top: 20px;
+        top: 30px;
         height: auto;
         background-color: var(--white-color);
         position: absolute;
@@ -258,6 +277,10 @@
 
     .special__recipes-content--in {
         margin: 10px;
+    }
+
+    .layout__food {
+        margin-bottom: 0;
     }
 
     .special__recipes-content--in h2 {
@@ -269,6 +292,10 @@
         text-transform: uppercase;
     }
 
+    .container .delightful__experience {
+        margin-top: 740px;
+    }
+
     .footer {
         background-color: #000;
         position: relative;
@@ -278,10 +305,22 @@
         height: 1212px;
     }
 
+    .footer_img {
+        height: 100%;
+    }
+
+    .footer_img-right img{
+        width: 110px;
+    }
+
+    .footer_img-left img {
+        width: 120px;
+    }
+
     .footer__content {
         position: absolute;
         top: 0;
-        margin: 40px 0;
+        margin: 0;
     }
 
     .address_input {

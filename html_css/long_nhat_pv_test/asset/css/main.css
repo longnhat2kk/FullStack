@@ -116,7 +116,7 @@
 
 .nav__bar-link {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 300;
     cursor: pointer;
     color: var(--white-color);
@@ -127,7 +127,7 @@
 }
 
 .nav__bar-btn {
-    font-size: 1.2rem;
+    font-size: 2rem;
     background-color: transparent;
     border: 1px solid var(--white-color);
 }
@@ -248,7 +248,7 @@
     color: #000;
     font-size: 2rem;
     z-index: 10;
-    margin: 7px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -323,7 +323,7 @@
 .about__area-img--right {
     position: absolute;
     right: 0;
-    top: calc(100% + 305px)
+    top: calc(100% + 320px)
 }
 
 /* Nội dung 2 */
@@ -371,7 +371,7 @@
 }
 
 .special__recipes--btn {
-    margin-top: 10px;
+    margin: 10px;
     font-size: 1.2rem;
     background-color: #E7A331;
     color: var(--white-color);
@@ -410,7 +410,6 @@
     align-items: center;
     justify-content: center;
     padding-top: 92px;
-    padding-bottom: 66px;
 }
 
 
@@ -536,23 +535,26 @@
 /* Footer */
 .footer{
     background-color: #000;
-    /* position: absolute; */
+    position: relative;
     left: 0;
     right: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: auto;
 }
 
 .footer_img{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 474px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 450px;
+      width: 100%;
 }
 
 .footer__content{
     position: absolute;
-    margin-left: 60px;
 }
 
 
